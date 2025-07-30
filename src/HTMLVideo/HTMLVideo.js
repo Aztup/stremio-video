@@ -566,6 +566,7 @@ function HTMLVideo(options) {
                             } else {
                                 videoElement.src = stream.url;
                             }
+                            videoElement.playbackRate = commandArgs.playbackSpeed !== null && isFinite(commandArgs.playbackSpeed) ? parseInt(commandArgs.playbackSpeed, 10) : 1;
                         })
                         .catch(function() {
                             if (stream !== commandArgs.stream) {
